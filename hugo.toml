@@ -1,0 +1,4 @@
+baseURL = 'https://smileyjs.github.io/JSBlog/'
+languageCode = 'en-us'
+title = 'JS Blog'
+theme = 'PaperMod'
