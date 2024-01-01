@@ -1,0 +1,3 @@
+[submodule "themes/PaperMod"]
+	path = themes/PaperMod
+	url = git@github.com:SmileyJs/hugo-PaperMod-js.git
