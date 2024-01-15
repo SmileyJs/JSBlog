@@ -51,23 +51,10 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
-      - name: Get token from Github App
-        uses: actions/create-github-app-token@v1
-        id: app_token
-        with:
-          app-id: ${{ secrets.APP_ID }}
-          private-key: ${{ secrets.APP_PEM }}
-          # owner is required, otherwise the creds will fail the checkout step
-          owner: ${{ github.repository_owner }}
-
       - name: Get Theme
-        uses: actions/checkout@v4
         with:
-          submodules: true
-          token: ${{ steps.app_token.outputs.token }}
-      # - name: Get Theme
-      #   run: git submodule update --init --recursive && git submodule update --remote --merge
-
+          ssh-key: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: git submodule update --init --recursive && git submodule update --remote --merge
       - name: Build with Hugo
         run: |
           hugo \
