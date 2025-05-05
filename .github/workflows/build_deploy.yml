@@ -56,6 +56,10 @@ jobs:
           hugo \
             --buildDrafts --gc --verbose \
             --baseURL ${{ steps.pages.outputs.base_url }}
+      - name: Debug: List Generated Files
+        run: |
+          ls -la
+          ls -la ./public
       - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
