@@ -45,6 +45,7 @@ jobs:
         run: |
           wget -O hugo.tar.gz https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz \
           && tar -xvf hugo.tar.gz && sudo mv ./hugo /usr/bin
+          hugo version
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
