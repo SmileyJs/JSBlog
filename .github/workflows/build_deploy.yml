@@ -56,7 +56,7 @@ jobs:
           hugo \
             --buildDrafts --gc --verbose \
             --baseURL ${{ steps.pages.outputs.base_url }}
-      - name: Debug: List Generated Files
+      - name: List Generated Files
         run: |
           ls -la
           ls -la ./public
